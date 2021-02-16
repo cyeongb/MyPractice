@@ -20,8 +20,6 @@ const countThree = (two) =>
   });
 
 countOne()
-  // 하나의 값을 똑같이 출력할 경우에는 생략 가능합니다.
-  // 원래: countOne().then((one)=>countTwo(one)) ...
   .then(countTwo)
   .catch(console.log)
 
