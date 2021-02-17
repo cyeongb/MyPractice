@@ -5,7 +5,7 @@ setTimeout(() =>
     ,1000);
 console.log('2');
 
-
+ddddddds
 function printNow(print) {
     print();
 }
