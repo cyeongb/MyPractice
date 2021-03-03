@@ -2,10 +2,10 @@
 
 const promise = new Promise((resolve, reject) => {
   const name = "gambi?";
-  // network연결, file을 읽는다던지 시간이 많이걸리는 무거운 작업들을 주로 수행
+  // promise()안에서는  network연결, file을 읽는다던지 시간이 많이걸리는 무거운 작업들을 주로 수행합니다.
   console.log("로딩중냥..");
   setTimeout(() => {
-    //setTimeout으로 네트워크에 연결하는 척
+    //setTimeout으로 네트워크에 연결하는 척 합니다.
     console.log("이름 연결 완료됬다옹");
     if (name === "gambi") {
       resolve("gambi");
