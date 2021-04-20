@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>redux 가 없을때</title>
+</head>
+
+<body>
+    <style>
+        .container {
+            border: 5px solid black;
+            padding: 10px;
+        }
+    </style>
+
+    <div id="red"></div>
+    <div id="yellow"></div>
+    <div id="green"></div>
+    <script>
+        function red() {
+            document.querySelector('#red').innerHTML = `
+            <div class="container" id="component_red">
+                <h1>RED</h1>
+                    <input type="button" value="빠이야!" onClick="
+                    document.querySelector('#component_red').style.backgroundColor ='red';
+                    "/>
+                </div>
+                `;
+        }
+        function yellow() {
+            document.querySelector('#yellow').innerHTML = `
+            <div class="container" id="component_yellow">
+                <h1>YELLOW</h1>
+                    <input type="button" value="빠이야!" onClick="
+                    document.querySelector('#component_yellow').style.backgroundColor ='yellow';
+                    "/>
+                </div>
+                `;
+        }
+        function green() {
+            document.querySelector('#green').innerHTML = `
+            <div class="container" id="component_green">
+                <h1>GREEN</h1>
+                    <input type="button" value="빠이야!" onClick="
+                    document.querySelector('#component_green').style.backgroundColor ='green';
+                    "/>
+                </div>
+                `;
+        }
+        red();
+        yellow();
+        green();
+    </script>
+</body>
+
+</html>

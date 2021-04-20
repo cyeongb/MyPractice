@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>redux 가 있을때</title>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.5/redux.min.js"></script>
+</head>
+
+<body>
+    <style>
+        .container {
+            border: 5px solid black;
+            padding: 10px;
+        }
+    </style>
+
+    <div id="red"></div>
+    <script>
+
+        /* store만들기 */
+        function reducer(state, action) {
+            //reducer는 dispatch에의해 들어온 action과 state값으로 새로운 state값을 만들어줍니다
+            console.log('state >', state)
+            console.log('action >', action)
+            if (state === undefined) {
+                return { color: 'gray' } //초기 state값
+            }
+
+            // 제가 처음 작성한 코드 .. 이렇게하면 다른 모듈의 혜택을 볼수 없다고 합니다.
+            // switch (action.type) {
+            //     case 'CHANGE_COLOR': return { color: 'red' }
+            // }
+
+
+        }
+
+        var store = Redux.createStore(reducer); // reducer를 store에 저장
+        console.log('state >', store.getState()); //store의 state값 가져오기
+
+        function red() {
+            let state = store.getState();
+            console.log('클릭후 state >', state.color)
+            document.querySelector('#red').innerHTML = `
+            <div class="container" id="component_red" style="background-color: ${state.color}">
+                <h1>RED</h1>
+                    <input type="button" value="빠이야!" onClick="
+                 store.dispatch({type:'CHANGE_COLOR', color:'red'})"/>
+                    
+                </div>
+                
+                `;
+            // store에 dispatch()를 호출하면 reducer라는 함수를 호출하게 되어있습니다.
+        }
+
+        red();
+
+    </script>
+</body>
+
+</html>
